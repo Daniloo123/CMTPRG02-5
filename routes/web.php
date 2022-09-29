@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/Home', [Homecontroller::class, 'show']);//
+Route::get('/home', [HomeController::class, 'home']);//
