@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', [Login::class, 'home']);//
+//Route::get('/home', [Login::class, 'home']);//
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\Login::class, 'index'])->name('home');
