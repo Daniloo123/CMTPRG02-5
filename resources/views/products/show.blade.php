@@ -9,6 +9,10 @@
 <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 @section('content')
+                <div id="purchase-btn">
+                    <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.index')}}"> Terug </a></button>
+                    &nbsp;
+                </div>
 <div class="container mt-5 mb-5" id="productPage">
     <div class="row">
         <div class="col-md-5">
@@ -26,59 +30,59 @@
             <p class="description text-muted">{{$product->description}}</p>
 
             </div><!-- row -->
-            <div id="purchase-btn">
-                <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href=""> Buy Now </a></button>
-                &nbsp;
-            </div>
+{{--            <div id="purchase-btn">--}}
+{{--                <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href=""> Buy Now </a></button>--}}
+{{--                &nbsp;--}}
+{{--            </div>--}}
     </div>
 
 
-            <br><br>
-            <hr>
-            <br>
-            <h4 class="text-center text-muted">Vergelijkebare producten</h4>
-            <br><br>
-            <div class="row" id="relatedProducts">
-                <div class="col-md-3">
-                    <div class="overlay">
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" class="zoom-in figure-img img-fluid">
-                    </div>
+{{--            <br><br>--}}
+{{--            <hr>--}}
+{{--            <br>--}}
+{{--            <h4 class="text-center text-muted">Vergelijkebare producten</h4>--}}
+{{--            <br><br>--}}
+{{--            <div class="row" id="relatedProducts">--}}
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="overlay">--}}
+{{--                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" class="zoom-in figure-img img-fluid">--}}
+{{--                    </div>--}}
 
-                    <h5 class="text-center text-dark mt-3">Adidas Cool T-Shirt</h5>
-                    <p class="cost text-center text-dark mt-2">$179.00</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="overlay">
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" class="zoom-in figure-img img-fluid">
-                    </div>
+{{--                    <h5 class="text-center text-dark mt-3">Adidas Cool T-Shirt</h5>--}}
+{{--                    <p class="cost text-center text-dark mt-2">$179.00</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="overlay">--}}
+{{--                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" class="zoom-in figure-img img-fluid">--}}
+{{--                    </div>--}}
 
-                    <h5 class="text-center text-dark mt-3">Red Hoodie</h5>
-                    <p class="cost text-center text-dark mt-2">$35.99</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="overlay">
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" class="zoom-in figure-img img-fluid">
-                    </div>
+{{--                    <h5 class="text-center text-dark mt-3">Red Hoodie</h5>--}}
+{{--                    <p class="cost text-center text-dark mt-2">$35.99</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="overlay">--}}
+{{--                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" class="zoom-in figure-img img-fluid">--}}
+{{--                    </div>--}}
 
-                    <h5 class="text-center text-dark mt-3">Grey Sweater</h5>
-                    <p class="cost text-center text-dark mt-2">$36.99 </p>
-                </div>
-                <div class="col-md-3">
-                    <div class="overlay">
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" class="zoom-in figure-img img-fluid">
-                    </div>
+{{--                    <h5 class="text-center text-dark mt-3">Grey Sweater</h5>--}}
+{{--                    <p class="cost text-center text-dark mt-2">$36.99 </p>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3">--}}
+{{--                    <div class="overlay">--}}
+{{--                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" class="zoom-in figure-img img-fluid">--}}
+{{--                    </div>--}}
 
-                    <h5 class="text-center text-dark mt-3">Black Denim Jacket</h5>
-                    <p class="cost text-center text-dark mt-2">$99.99</p>
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-        </div>
+{{--                    <h5 class="text-center text-dark mt-3">Black Denim Jacket</h5>--}}
+{{--                    <p class="cost text-center text-dark mt-2">$99.99</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <br>--}}
+{{--            <br>--}}
+{{--            <br>--}}
+{{--        </div>--}}
 
 
-    </div>
+{{--    </div>--}}
 </div>
 @endsection
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -7,8 +7,10 @@
         }
     </style>
 <h1>Products</h1>
+    @if(\Illuminate\Support\Facades\Auth::user())
     <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.create')}}"> Create product </a></button>
-<br>
+    @endif
+    <br>
 <div class="container cardItem" id="products">
     <br>
     <div class="row">

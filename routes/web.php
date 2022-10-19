@@ -19,7 +19,10 @@ Route::get('/', function () {
     return view('layouts.web');
 });
 
-Route::resource('products', \App\Http\Controllers\ProductController::Class);
+//Inlog verificatie
+Route::middleware(['auth'])->group(function (){
+    Route::resource('products', \App\Http\Controllers\ProductController::Class);
+});
 
 
 //Route::get('/home', [Login::class, 'home']);//
