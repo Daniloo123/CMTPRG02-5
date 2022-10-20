@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 //Inlog verificatie
-    Route::resource('products', \App\Http\Controllers\ProductController::Class);
+Route::resource('products', \App\Http\Controllers\ProductController::Class);
 
 //Route::get('/products.index', [App\Http\Controllers\ProductController::class, 'index']);
 //Route::get('/products.show', [App\Http\Controllers\ProductController::class, 'show'])->name('show products');

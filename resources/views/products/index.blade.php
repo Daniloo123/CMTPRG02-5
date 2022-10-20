@@ -26,7 +26,7 @@
                     <p class="card-cost">€ {{$product->price}}</p>
                     <p class="card-description">{{$product->description}}</p>
                     <p class="card-category">{{$product->categroy}}</p>
-
+                    @if(\Illuminate\Support\Facades\Auth::user())
                     <div id="btn">
                         <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.edit',$product->id)}}"> Edit </a></button>
                         <form class="btn btn-sm" action="{{route('products.destroy', $product->id)}}" method="post">
@@ -35,7 +35,7 @@
                             <button type="submit" class="btn btn-sm btn-primary">Delete</button>
                         </form>
                     </div>
-
+                    @endif
                 </div>
             </div>
         </div>
