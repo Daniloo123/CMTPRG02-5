@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\isAdmin;
+
 
 class ProductController extends Controller
 {
     public function __construct(){
 
-        $this->middleware('auth')->except(['show' , 'index']);
+        $this->middleware('isAdmin')->except(['show' , 'index']);
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
