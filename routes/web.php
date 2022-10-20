@@ -20,9 +20,10 @@ Route::get('/', function () {
 });
 
 //Inlog verificatie
-Route::middleware(['auth'])->group(function (){
     Route::resource('products', \App\Http\Controllers\ProductController::Class);
-});
+
+//Route::get('/products.index', [App\Http\Controllers\ProductController::class, 'index']);
+//Route::get('/products.show', [App\Http\Controllers\ProductController::class, 'show'])->name('show products');
 
 
 //Route::get('/home', [Login::class, 'home']);//
