@@ -9,10 +9,10 @@
 <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 @section('content')
-                <div id="purchase-btn">
-                    <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.index')}}"> Terug </a></button>
-                    &nbsp;
-                </div>
+<div id="purchase-btn">
+    <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.index')}}"> Terug </a></button>
+    &nbsp;
+</div>
 <div class="container mt-5 mb-5" id="productPage">
     <div class="row">
         <div class="col-md-5">

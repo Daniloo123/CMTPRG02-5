@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('layouts.web');
 });
 
+
 //Inlog verificatie
 Route::resource('products', \App\Http\Controllers\ProductController::Class);
 
-//Route::get('/products.index', [App\Http\Controllers\ProductController::class, 'index']);
-//Route::get('/products.show', [App\Http\Controllers\ProductController::class, 'show'])->name('show products');
-
+//users edit pages
+Route::resource('users', \App\Http\Controllers\UserController::Class);
 
 //Route::get('/home', [Login::class, 'home']);//
 
