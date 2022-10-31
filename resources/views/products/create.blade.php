@@ -20,10 +20,17 @@
                 <input type="text" name="name" class="form-control"></br>
 
                 <label>Price</label></br>
-                <input type="number" step="0.01" name="price" class="form-control"></br>
+                <input type="number" name="price" class="form-control"></br>
 
                 <label>Category</label></br>
-                <input type="text" name="category" class="form-control"></br>
+
+                <select name="category" class="form-control">
+                    <option value="">Kies merk</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="Puma">Puma</option>
+                    <option value="New Balance">New Balance</option>
+                </select></br>
 
                 <label>Description</label></br>
                 <input type="text" name="description" class="form-control"></br>

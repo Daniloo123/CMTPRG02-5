@@ -6,7 +6,7 @@ use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class AdminController extends UserController
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class AdminController extends UserController
      */
     public function index()
     {
-        //
+         $admin = User::all();
+        return view('admins.index', compact('admin' ));
     }
 
     /**
@@ -58,7 +59,8 @@ class AdminController extends UserController
      */
     public function edit(Admin $admin)
     {
-        //
+        $admin = User::find($admin->id);
+        return view('admins.edit')->with('admin', $admin);
     }
 
     /**

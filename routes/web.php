@@ -26,6 +26,9 @@ Route::resource('products', \App\Http\Controllers\ProductController::Class);
 //users edit pages
 Route::resource('users', \App\Http\Controllers\UserController::Class);
 
+//Admin
+Route::resource('admins', \App\Http\Controllers\AdminController::Class);
+
 //Route::get('/home', [Login::class, 'home']);//
 
 Auth::routes();
