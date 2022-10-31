@@ -51,7 +51,6 @@ class ProductController extends Controller
             'category' => 'required',
             'description' => 'required'
         ]);
-        dd($data);
 
         Product::create($data);
         return redirect()->route('products.index');

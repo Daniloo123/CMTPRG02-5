@@ -24,8 +24,7 @@
                             <p class="card-text"><a href="{{route('products.show',$product)}}" class="text-dark">{{$product->name}}</a></p>
 
                             <p class="card-cost">€ {{$product->price}}</p>
-                            <p class="card-description">{{$product->description}}</p>
-                            <p class="card-category">{{$product->categroy}}</p>
+                            <p class="card-category">{{$product->category}}</p>
                             @if(Auth::user()-> admin =='1')
                                 <div id="btn">
                                     <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.edit',$product->id)}}"> Edit </a></button>

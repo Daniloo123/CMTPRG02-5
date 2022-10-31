@@ -15,7 +15,13 @@
                 <input type="number" name="price" value="{{$products->price}}" class="form-control"></br>
 
                 <label>Category</label></br>
-                <input type="text" name="category" value="{{$products->category}}" class="form-control"></br>
+                <select name="category" class="form-control">
+                    <option value="">{{$products->category}}</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Adidas">Adidas</option>
+                    <option value="Puma">Puma</option>
+                    <option value="New Balance">New Balance</option>
+                </select></br>
 
                 <label>Description</label></br>
                 <input type="text" name="description" value="{{$products->description}}" class="form-control"></br>

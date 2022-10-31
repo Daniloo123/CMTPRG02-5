@@ -23,7 +23,7 @@ Route::get('/', function () {
 //Inlog verificatie
 Route::resource('products', \App\Http\Controllers\ProductController::Class);
 
-//users edit pages
+//users  pages
 Route::resource('users', \App\Http\Controllers\UserController::Class);
 
 //Admin
