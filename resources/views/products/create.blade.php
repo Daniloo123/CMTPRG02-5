@@ -20,7 +20,7 @@
                 <input type="text" name="name" class="form-control"></br>
 
                 <label>Price</label></br>
-                <input type="number" name="price" class="form-control"></br>
+                <input type="number" step="0.01" name="price" class="form-control"></br>
 
                 <label>Category</label></br>
 
@@ -34,6 +34,7 @@
 
                 <label>Description</label></br>
                 <input type="text" name="description" class="form-control"></br>
+                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" class="form-control"></br>
 
                 <input type="submit" value="Save" class="btn btn-success"></br>
             </form>

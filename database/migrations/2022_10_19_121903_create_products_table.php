@@ -19,6 +19,7 @@ return new class extends Migration
             $table->float("price");
             $table->string("category");
             $table->text("description");
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

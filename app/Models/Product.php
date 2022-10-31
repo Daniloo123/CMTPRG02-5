@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'price', 'category', 'description'];
+    protected $fillable = ['name', 'price', 'category', 'description', 'user_id'];
 
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 }
+
+
