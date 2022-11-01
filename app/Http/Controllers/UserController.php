@@ -102,20 +102,5 @@ class UserController extends Controller
      * @param  \App\Models\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
-    {
-        //
-    }
-
-    public function makeAdmin()
-    {
-
-    }
-
-    public function removeAdmin()
-    {
-
-    }
-
 
 }

@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function __construct(){
 
-        $this->middleware('isAdmin')->except(['show' , 'index']);
+        //$this->middleware('isAdmin')->except(['show' , 'index']);
         $this->middleware('auth');
     }
     /**
@@ -121,6 +121,15 @@ class ProductController extends Controller
         $product->delete();
 
         return back();
+    }
+
+    public function search(){
+        $search_txt = $_GET['query'];
+        $products = Product::where('name','LIKE', '%'.$search_txt. '%')
+            ->orWhere('category','LIKE', '%'.$search_txt. '%')->get();
+
+        return view('products.search', compact('products'));
+
     }
 
 
