@@ -38,4 +38,6 @@ Route::get('/home', [App\Http\Controllers\Login::class, 'index'])->name('home');
 //Search route
 Route::get('search', [\App\Http\Controllers\ProductController::class, 'search'])->name('search');
 
+//status
+Route::post('changeStatus', [\App\Http\Controllers\ProductController::class, 'changeStatus'])->name('changeStatus');
 

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.index')}}"> Go back </a></button>
+</br>
+</br>
     <form class="form-check-inline" type="get" action="{{route('search')}}">
         <input type="search" name="query" placeholder="Search Products">
         <button type="submit">Search</button>

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("category");
             $table->text("description");
             $table->foreignId('user_id');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

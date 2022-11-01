@@ -131,6 +131,14 @@ class ProductController extends Controller
         return view('products.search', compact('products'));
 
     }
+    public function changeStatus(Request $request)
+    {
+        $product = Product::find($request->id);
+        $product->status = $request->status;
+        $product->save();
+
+        return response()->json(['success'=>'Status changed successfully.']);
+    }
 
 
 }

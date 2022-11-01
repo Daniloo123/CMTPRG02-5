@@ -9,7 +9,7 @@ use App\User;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'price', 'category', 'description', 'user_id'];
+    protected $fillable = ['name', 'price', 'category', 'description', 'user_id', 'status'];
 
 
 

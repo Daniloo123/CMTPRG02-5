@@ -1,25 +1,28 @@
 @extends('layouts.app')
+<script type="text/javascript" src="lib.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @section('content')
+
     <style>
         .style{
             padding-bottom: 25px;
         }
     </style>
+
+
     <form class="form-check-inline" type="get" action="{{route('search')}}">
         <input type="search" name="query" placeholder="Search Products">
         <button type="submit">Search</button>
     </form>
     <h1>Products</h1>
-    @if(Auth::user()-> admin =='1')
         <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.create')}}"> Create product </a></button>
-    @endif
     <br>
     <div class="container cardItem" id="products">
         <br>
         <div class="row">
             @foreach($products as $product)
-
+                @if($product->status == '1')
                 <div class="col-md-3 style">
                     <div class="card">
 
@@ -42,9 +45,68 @@
                         </div>
                     </div>
                 </div>
+                @endif
             @endforeach
         </div>
     </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    @if($product->admin == '1')
+                        <th>Status</th>
+                    @endif
+                </tr>
+                </thead>
+                @foreach($products as $product)
+                <tbody>
+                <tr>
+                    <td>{{$product->name}}</td>
+                    <td>{{$product->price}}</td>
+                    <td>{{$product->category}}</td>
+                    @if($product->admin == '1')
+                    <td>
+                        <div class="form-group">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input"
+                                       {{($product->status) ? 'checked' : ''}}
+                                       onclick="changeProductStatus(event.target, {{ $product->id }});">
+                                <label class="custom-control-label pointer"></label>
+                            </div>
+                        </div>
+                    </td>
+                    @endif
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function changeProductStatus(_this, id) {
+            let status = $(_this).prop('checked') == true ? 1 : 0;
+            let _token = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                url: `{{route('changeStatus')}}`,
+                type: 'post',
+                datatype: 'json',
+                data: {
+                    '_token': _token,
+                    'id': id,
+                    'status': status
+                },
+                success: function (result) {
+                }
+            });
+        }
+
+    </script>
 
 @endsection
