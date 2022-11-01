@@ -9,7 +9,7 @@
             padding-bottom: 25px;
         }
     </style>
-
+    {{dd($countPost)}}
 
     <form class="form-check-inline" type="get" action="{{route('search')}}">
         <input type="search" name="query" placeholder="Search Products">
