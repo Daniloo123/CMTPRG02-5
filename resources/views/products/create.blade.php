@@ -20,7 +20,7 @@
                 <input type="text" name="name" class="form-control"></br>
 
                 <label>Price</label></br>
-                <input type="number" step="0.01" name="price" class="form-control"></br>
+                <input type="number" min="0" step="0.01" name="price" class="form-control"></br>
 
                 <label>Category</label></br>
 

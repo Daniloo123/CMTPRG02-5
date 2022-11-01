@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<script type="text/javascript" src="lib.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 @section('content')
@@ -9,12 +8,21 @@
             padding-bottom: 25px;
         }
     </style>
-    {{dd($countPost)}}
 
     <form class="form-check-inline" type="get" action="{{route('search')}}">
         <input type="search" name="query" placeholder="Search Products">
         <button type="submit">Search</button>
     </form>
+    <form method="get" action="{{route('filter')}}">
+        <select name="filter">
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Puma">Puma</option>
+            <option value="New Balance">New Balance</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+
     <h1>Products</h1>
         <button type="button" class="btn btn-sm btn-primary"><a class="text-white" href="{{route('products.create')}}"> Create product </a></button>
     <br>
@@ -52,24 +60,25 @@
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
+                @if($countPost >= '5' || Auth::user()->admin =='1')
                 <thead>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Category</th>
-                    @if($product->admin == '1')
+                    @if(Auth::user()->admin =='1'||$product->user_id == Auth::user()->id)
                         <th>Status</th>
                     @endif
                 </tr>
                 </thead>
                 @foreach($products as $product)
+                    @if($product->user_id == Auth::user()->id||Auth::user()->admin =='1')
                 <tbody>
                 <tr>
                     <td>{{$product->name}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category}}</td>
-                    @if($product->admin == '1')
+                    @if(Auth::user()->admin =='1' ||$product->user_id == Auth::user()->id)
                     <td>
                         <div class="form-group">
                             <div class="custom-control custom-switch">
@@ -83,7 +92,9 @@
                     @endif
                     </tr>
                 </tbody>
+                        @endif
                 @endforeach
+                @endif
             </table>
         </div>
     </div>

@@ -41,3 +41,5 @@ Route::get('search', [\App\Http\Controllers\ProductController::class, 'search'])
 //status
 Route::post('changeStatus', [\App\Http\Controllers\ProductController::class, 'changeStatus'])->name('changeStatus');
 
+// Filter
+Route::get('filter', [\App\Http\Controllers\ProductController::class, 'filter'])->name('filter');

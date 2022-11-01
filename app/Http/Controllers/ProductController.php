@@ -36,6 +36,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+        //$tags = \App\Tag::get()->pluck('name', 'id');
         return view('products.create');
 
     }
@@ -51,7 +52,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'category' => 'required',
+            'category' => 'required||in :Nike,Adidas,New Balance,Puma',
             'description' => 'required',
             'user_id' => 'required',
         ]);
@@ -98,7 +99,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'price' => 'required|numeric',
-            'category' => 'required',
+            'category' => 'required||in :Nike,Adidas,New Balance,Puma',
             'description' => 'required'
         ]);
 
@@ -140,6 +141,15 @@ class ProductController extends Controller
 
         return response()->json(['success'=>'Status changed successfully.']);
     }
+
+    public function filter(Request $request){
+
+        $filter = $request->query('filter');
+        $products = Product::where('category', 'LIKE', '%' . $filter. '%')->get();
+        return view('products.filter', compact('products'));
+    }
+
+
 
 
 }

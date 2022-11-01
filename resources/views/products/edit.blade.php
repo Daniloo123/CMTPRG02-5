@@ -22,7 +22,7 @@
                 <input type="text" name="name" value="{{$products->name}}" class="form-control"></br>
 
                 <label>Price</label></br>
-                <input type="number" step="0.01" name="price" value="{{$products->price}}" class="form-control"></br>
+                <input type="number" min="0" step="0.01" name="price" value="{{$products->price}}" class="form-control"></br>
 
                 <label>Category</label></br>
                 <select name="category" class="form-control">
